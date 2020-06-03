@@ -16,7 +16,7 @@ export const removeFromTeam = slot => {
         dispatch({
             type: REMOVE_FROM_TEAM,
             payload: {
-                slot
+                slot   
             }
         })
     }

@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .pokemon-selection {
     float: left;
     width:45%;
@@ -11,7 +13,7 @@
         overflow-y: scroll;
         
         .pokemon {
-            background-color: #e9e9e9;
+            background-color: $primary_color;
             margin-bottom: 1vh;
             padding: 2vh;
             border-radius: .8vh;
@@ -19,43 +21,44 @@
             position: relative;
             box-shadow: 0 .3vh .25vh rgba(0, 0, 0, 0.459);
             cursor: pointer;
-            img {
-                height:100%;
+
+            .sprite {
+                width:20%;
+                position: relative;
+                top:50%;
+                transform: translateY(-50%);
+                float:left;
                 border-radius: 50vh;
                 padding:.5vh;
+                img {
+                    width:100%;
+                    height:100%;
+                }
             }
-            h1 {
-                position: absolute;
-                left:20%;
-                top:10%;
-                font-weight: bold;
-                font-size: 2vh;
-                text-align: center;
-            }
-            .types {
-                position: absolute;
-                top:25%;
-                left:20%;
-                .type {
-                    float:left;
-                    background-color: rgb(209, 209, 209);
-                    border-radius: 20vh;
-                    padding:1vh;
-                    margin:5%;
-                    width:4vw;
-                    height:10%;
-                    text-align: center;
-                    font-size: 1.5vh;
-                } 
-            }   
-            
+            .info {
+                width:70%;
+                float:left;
+
+                h1 {
+                    width:100%;
+                    font-weight: bold;
+                    font-size: 2vh;
+                    text-align: left;
+                    color:white;
+                }
+                .types {
+                    .pokemon-type {
+                        margin-top:1%;
+                    }
+                }   
+            }  
         }
         .pokemon:hover {
-            background-color: #dfdfdf;
+            background-color: darken($primary_color, 1);
             box-shadow: 0 .15vh .25vh rgba(0, 0, 0, 0.459);
         }
         .pokemon:active {
-            background-color: #d4d4d4;
+            background-color: darken($primary_color, 3);
             box-shadow: 0 .15vh .25vh rgba(0, 0, 0, 0.459);
         }
     }
