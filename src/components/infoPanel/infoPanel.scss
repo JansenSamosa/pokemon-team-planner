@@ -1,0 +1,51 @@
+@import '../../variables';
+
+.info-panel {
+    float: left;
+    width: 98%;
+    height: 58.5%;
+    margin:1%;
+    margin-top:0;
+    background-color: $primary_color;
+    border-radius: .8vh;
+    box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
+
+    .columns {
+        width: 100%;
+        height: 100%;
+        
+        .column {
+            overflow: hidden;
+            float: left;
+            height: 100%;
+            width: 15.6666%;
+            margin:.40%;
+            border:1px solid darken($primary_color, 2%);
+            border-bottom: none;
+            border-top: none;
+            * {
+                margin: auto;
+            }
+            .row {
+                clear:both;
+                width: 100%;
+                display: inline-block;
+                height:20%;
+                margin-bottom: 2%;
+                h1 {
+                    color:white;
+                    font-size:.8vw;
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 5%;
+
+                }
+                .pokemon-type {
+                    width:20%;
+                    font-size: .5vw;
+                    float:left;
+                }
+            }
+        }
+    }
+}

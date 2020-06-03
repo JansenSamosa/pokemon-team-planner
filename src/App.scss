@@ -8,6 +8,17 @@
 body {
   background-color: $bg-color;
 }
+
+.left-column {
+  float:left;
+  width: 52.8vw;
+  height:100vh;
+}
+.right-column {
+  float:left;
+  width:47.2vw;
+  height: 100vh;
+}
 img, p, h1 {
   -webkit-user-select: none;
   -khtml-user-select: none;

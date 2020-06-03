@@ -2,14 +2,12 @@
 
 .team-manager {
     float: left;
-    width: 52.8vw;
-    height: 38.4vh;
-    margin:1vh;
-    margin-right: 0;
-    margin-left: .7vw;
+    width: 98%;
+    height: 38.4%;
+    margin:1%;
     background-color: $primary_color;
     border-radius: .8vh;
-    box-shadow: 0 .3vh .25vh rgba(0, 0, 0, 0.459);
+    box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
     .team-pokemon {
         position: relative;
         top:7.5%;
@@ -61,8 +59,18 @@
             } 
             .sprite:hover {
                 box-shadow: .15vh .15vh .1vh rgba(0, 0, 0, 0.459);
+                position: relative;
+                
                 .overlay {
                     opacity: .2;
+                }
+                img {
+                    animation: jump 350ms infinite 0ms;
+                }
+                @keyframes jump {
+                    0% {top:0}
+                    50% {top:-5%}
+                    100% {top:0}
                 }
             }
             .sprite:active {

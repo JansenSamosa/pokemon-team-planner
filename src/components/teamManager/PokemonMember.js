@@ -2,44 +2,42 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import chroma from 'chroma-js'
 
+import { getTypeColor } from '../../Helpers'
+
 import PokemonType from '../PokemonType'
 
 import { removeFromTeam } from '../../redux/actions/teamActions'
 
 export class PokemonMember extends Component {
 
-    //Gets pokemon data from id obtained from redux store
-    getPokemon = () => this.props.pokemon.filter(pokemon => pokemon.num === parseInt(this.props.pokemonMember))[0]
-
     removePokemonFromTeam = () => {
         this.props.removeFromTeam(this.props.slot)
     }
     getStyle = () => {
         let style = {}
-        if(this.getPokemon()) {
-            const pokemon = this.getPokemon()
-            style.backgroundColor = window.getTypeColor(pokemon.types[0]) 
-            style.borderColor = chroma(window.getTypeColor(pokemon.types[0])).darken(1)
+        if(this.props.pokemonMember) {
+            const pokemon = this.props.pokemonMember
+            style.backgroundColor = getTypeColor(pokemon.types[0]) 
+            style.borderColor = chroma(getTypeColor(pokemon.types[0])).darken(1)
         }
 
         return style
     }
     renderName = () => {
-        if(this.getPokemon()) {
-            let name = this.getPokemon().name
+        if(this.props.pokemonMember) {
+            let name = this.props.pokemonMember.name
             return name.charAt(0).toUpperCase() + name.slice(1)
         }
     }
     renderSprite = () => {
-        const pokemon = this.getPokemon()
+        const pokemon = this.props.pokemonMember
         if(pokemon) {
             return <img src={pokemon.sprite} alt=''/>
         } else return null
     }
     renderTypes = () => {
-        console.log(this.getPokemon())
-        if(this.getPokemon()) {
-            return this.getPokemon().types.map(type => (
+        if(this.props.pokemonMember) {
+            return this.props.pokemonMember.types.map(type => (
                 <PokemonType type={type}/>
             ))
         }
@@ -47,7 +45,7 @@ export class PokemonMember extends Component {
     render() {
         return (
             <div className='pokemon'>
-                <div className='name'>{this.renderName()}</div>
+                <p className='name'>{this.renderName()}</p>
                 <div className='sprite' onClick={this.removePokemonFromTeam} style={this.getStyle()}>
                     <div className='overlay'></div>
                     {this.renderSprite()}
@@ -61,8 +59,7 @@ export class PokemonMember extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    pokemon: state.pokemon,
-    pokemonMember: state.team.team[parseInt(ownProps.slot)-1]
+    pokemonMember: state.pokemon.filter(pokemon => pokemon.num === parseInt(state.team.team[parseInt(ownProps.slot)-1]))[0]
 })
 
 export default connect(mapStateToProps, { removeFromTeam })(PokemonMember)
