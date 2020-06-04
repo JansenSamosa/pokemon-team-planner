@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ea8af67ba18d36cffea9d4049ea6f60e",
+    "revision": "8d6c7840902579895d992033e0a742da",
     "url": "/pokemon-team-planner/index.html"
   },
   {
-    "revision": "5739d6f824ba009433aa",
+    "revision": "3037f73208e7f57f61e6",
     "url": "/pokemon-team-planner/static/css/main.debdbe90.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokemon-team-planner/static/js/2.4c62bed8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5739d6f824ba009433aa",
-    "url": "/pokemon-team-planner/static/js/main.0139e676.chunk.js"
+    "revision": "3037f73208e7f57f61e6",
+    "url": "/pokemon-team-planner/static/js/main.32ede102.chunk.js"
   },
   {
     "revision": "6a218a7d4539e855dbd8",
