@@ -12,6 +12,16 @@ export class Pokemon extends Component {
         this.props.addToTeam(this.props.pokemon)
     }
 
+    getPokedexNum = () => {
+        let { num } = this.props.pokemon
+        num = num.toString()
+        
+        if(num.length === 1) num = '00' + num
+        if(num.length === 2) num = '0' + num
+
+        return `#${num}`
+    }
+
     render() {
         return (
             <div className='pokemon' onClick={this.addPokemonToTeam}>
@@ -19,7 +29,7 @@ export class Pokemon extends Component {
                     <img src={this.props.pokemon.sprite}></img>
                 </div>
                 <div className='info'>
-                    <h1>{this.props.pokemon.name.charAt(0).toUpperCase() + this.props.pokemon.name.slice(1)}</h1>
+                    <h1>{`${this.props.pokemon.name.charAt(0).toUpperCase() + this.props.pokemon.name.slice(1)} ${this.getPokedexNum()}`}</h1>
 
                     <div className='types' >
                         {this.props.pokemon.types.map(type => {
