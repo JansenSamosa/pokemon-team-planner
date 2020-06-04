@@ -10,7 +10,8 @@ export class PokemonSelection extends Component {
     state = {
         searchOptions: {
             search: '',
-            filter: 'all',
+            typeFilter: 'all',
+            finalEvoFilter: false,
             sort: ''
         }
     }

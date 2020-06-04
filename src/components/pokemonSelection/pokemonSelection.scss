@@ -30,6 +30,28 @@
             padding:.3vh;
             margin-left: 1%;
             color: white;
+            cursor: pointer;
+        }
+        .toggle-finalevo-filter {
+            background-color: lighten($primary_color, 15%);
+            border: none;
+            outline: none;
+            border-radius: .3vh;
+            padding:.4vh;
+            margin-left: 1%;
+            color: white;
+            cursor: pointer;
+        }
+        .toggle-finalevo-filter.on {
+            background-color: white;
+            color: lighten($primary_color, 15%)
+        }
+        .toggle-finalevo-filter.on:hover {
+            background-color: darken(white, 20%);
+            color: lighten($primary_color, 15%)
+        }
+        .toggle-finalevo-filter:hover, select:hover {
+            background-color: lighten($primary_color, 10%);
         }
     }
     .pokemon-list {

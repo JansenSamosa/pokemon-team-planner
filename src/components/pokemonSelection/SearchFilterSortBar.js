@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 export class SearchFilterSortBar extends Component {
     state = {
         search: '',
-        filter: 'all',
+        typeFilter: 'all',
+        finalEvoFilter: false,
         sort: ''
     }
 
@@ -16,14 +17,23 @@ export class SearchFilterSortBar extends Component {
     changeSearch = e => {
         this.setState({...this.state, search: e.target.value}, this.setSearchOptions())
     }
-    addFilter = e => {
-        this.setState({...this.state, filter: e.target.value}, this.setSearchOptions())
+    setTypeFilter = e => {
+        this.setState({...this.state, typeFilter: e.target.value}, this.setSearchOptions())
+    }
+    toggleFinalEvoFilter = () => {
+        const finalEvoFilter = !this.state.finalEvoFilter
+        this.setState({...this.state, finalEvoFilter}, this.setSearchOptions())
+    }
+    getToggleStyle = (bool) => {
+        if(bool) return 'on'
+        else return 'off'
     }
     render() {
         return (
             <div className='search-filter-sort-bar'>
                 <input type='text' onChange={this.changeSearch.bind(this)} placeholder='Search for pokemon'/>
-                <select onChange={this.addFilter.bind(this)}>
+                <select onChange={this.setTypeFilter.bind(this)}>
+
                     <option value='all'>All</option>
                     <option value='normal'>Normal</option>
                     <option value='grass'>Grass</option>
@@ -44,6 +54,7 @@ export class SearchFilterSortBar extends Component {
                     <option value='steel'>Steel</option>
                     <option value='fairy'>Fairy</option>
                 </select>
+                <button onClick={this.toggleFinalEvoFilter} className={`toggle-finalevo-filter ${this.getToggleStyle(this.state.finalEvoFilter)}`}>Final Evo Only</button>
             </div>
         )
     }

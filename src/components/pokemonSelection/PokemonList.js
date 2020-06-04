@@ -4,8 +4,10 @@ import Pokemon from './Pokemon'
 
 
 export class PokemonList extends Component {
+
     getPokemonList = () => {
-        let { search, filter, sort } = this.props.searchOptions
+        let { search, typeFilter, finalEvoFilter, sort } = this.props.searchOptions
+
         search = search.toLowerCase().replace(' ', '')
 
         let pokemonList = this.props.pokemon
@@ -13,13 +15,16 @@ export class PokemonList extends Component {
         if(search !== '') {
             pokemonList = pokemonList.filter(pokemon => pokemon.name.includes(search))
         }
-        if(filter !== 'all') {
+        if(typeFilter !== 'all') {
             pokemonList = pokemonList.filter(pokemon => {
                 const types = pokemon.types
-                if(types[0] === filter || types[1] === filter) {
+                if(types[0] === typeFilter || types[1] === typeFilter) {
                     return pokemon
                 }
             })
+        }
+        if(finalEvoFilter) {
+            pokemonList = pokemonList.filter(pokemon => pokemon.isFinalEvo)
         }
         return pokemonList
     }

@@ -18,7 +18,7 @@ export class Pokemon extends Component {
         
         if(num.length === 1) num = '00' + num
         if(num.length === 2) num = '0' + num
-
+        
         return `#${num}`
     }
 
