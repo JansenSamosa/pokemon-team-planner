@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class SearchFilterSortBar extends Component {
     state = {
         search: '',
-        filter: '',
+        filter: 'all',
         sort: ''
     }
 
