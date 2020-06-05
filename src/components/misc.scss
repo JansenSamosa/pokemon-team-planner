@@ -1,3 +1,5 @@
+@import '../variables';
+
 .pokemon-type {
     background-color: rgb(209, 209, 209);
     border-radius: 20vh;
@@ -5,4 +7,5 @@
     width:3vw;
     font-size: .6vw;
     text-align: center;
+    color: $primary_color;
 } 

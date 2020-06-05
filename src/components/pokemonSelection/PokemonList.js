@@ -24,7 +24,7 @@ export class PokemonList extends Component {
             })
         }
         if(finalEvoFilter) {
-            pokemonList = pokemonList.filter(pokemon => pokemon.isFinalEvo)
+            pokemonList = pokemonList.filter(pokemon => pokemon.isFinalEvo && !pokemon.isBaby)
         }
         return pokemonList
     }

@@ -2,18 +2,33 @@
 
 .pokemon-selection {
     float: left;
-    width: 98%;
-    height:99%;
+    width: 100%;
+    height:98.3%;
     margin: 1%;
+    margin-left: 0;
+    border-radius: .8vh;
+    box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
+    background-color: $primary_color;
+
     .search-filter-sort-bar {
-        background-color: $primary_color;
-        margin-bottom: 1%;
+        position: relative;
+        background-color: $secondary-color;
         padding: 1%;
         border-radius: .8vh;
         box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
-        width:100%;
+        width:95%;
         height:2%;
+        margin:auto;
+        margin-top: 1.5%;
+        z-index: 5;
+        * {
+            font-size: 1.35vh;
+            position: relative;
+            top:50%;
+            transform: translateY(-50%);
+        }
         input[type='text']{
+            
             width:35%;
             outline: none;
             border-radius: .3vh;
@@ -56,17 +71,20 @@
     }
     .pokemon-list {
         width: 100%;
-        height: 94.5%;
+        height: 93.5%;
         overflow-y: scroll;
         
         .pokemon {
-            background-color: $primary_color;
-            margin-bottom: 1%;
+            background-color: $secondary-color;
+            width:95%;
+            margin: auto;
+            margin-top: 1%;
             padding: 1%;
             border-radius: .8vh;
             height: 17.2%;
             position: relative;
             box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
+            overflow: hidden;
             cursor: pointer;
 
             .sprite {
@@ -101,9 +119,24 @@
                     }
                 }   
             }  
+            .type-color, .type2-color {
+                width: 50%;
+                height:2.5%;
+                opacity: .3;
+                margin:0;
+                position: absolute;
+            }
+            .type-color {
+                top:0;
+                left:0;
+            }
+            .type2-color {
+                top:0%;
+                right:0;
+            }
         }
         .pokemon:hover {
-            background-color: darken($primary_color, 1);
+            background-color: darken($secondary-color, 1%);
             box-shadow: 0 .15vh .25vh darken($bg-color, 10%);
             .sprite {
                 animation: jumpr 350ms infinite 0ms;
@@ -119,7 +152,7 @@
             }
         }
         .pokemon:active {
-            background-color: darken($primary_color, 3);
+            background-color: darken($secondary-color, 3%);
             box-shadow: 0 .15vh .25vh darken($bg-color, 10%);
         }
     }

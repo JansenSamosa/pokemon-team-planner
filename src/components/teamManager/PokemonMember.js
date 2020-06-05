@@ -19,6 +19,10 @@ export class PokemonMember extends Component {
             const pokemon = this.props.pokemonMember
             style.backgroundColor = getTypeColor(pokemon.types[0]) 
             style.borderColor = chroma(getTypeColor(pokemon.types[0])).darken(1)
+            if(pokemon.types[1]) {
+                style.borderRight = `.7vh solid ${chroma(getTypeColor(pokemon.types[1])).darken(1)}`
+                style.borderBottom = `.7vh solid ${chroma(getTypeColor(pokemon.types[1])).darken(1)}`
+            }
         }
 
         return style

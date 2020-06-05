@@ -54,7 +54,9 @@ export class SearchFilterSortBar extends Component {
                     <option value='steel'>Steel</option>
                     <option value='fairy'>Fairy</option>
                 </select>
-                <button onClick={this.toggleFinalEvoFilter} className={`toggle-finalevo-filter ${this.getToggleStyle(this.state.finalEvoFilter)}`}>Final Evo Only</button>
+                <button onClick={this.toggleFinalEvoFilter} className={`toggle-finalevo-filter ${this.getToggleStyle(this.state.finalEvoFilter)}`}>
+                    Final Evolutions Only
+                </button>
             </div>
         )
     }

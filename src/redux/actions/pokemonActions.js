@@ -17,6 +17,10 @@ export const fetchPokemon = () => {
                     const res2 = response[1]
 
                     let types = res1.data.types.sort((a,b) => a.slot-b.slot)
+                    //Puts 'normal' type in slot 2 if there are two types
+                    if(res1.data.types[0].type.name === 'normal' && res1.data.types[1]) {
+                        types = types.reverse()
+                    }
                     let newPokemon = {
                         num: res1.data.id, 
                         name: res1.data.name,
@@ -25,13 +29,9 @@ export const fetchPokemon = () => {
                         stats: res1.data.stats.map(stat => stat.base_stat),
                         //isFinalEvo is set during dispatch
                         isFinalEvo: false,
+                        isBaby: res2.data.is_baby,
                         sprite: res1.data.sprites.front_default,
                         evolution_chain_url: res2.data.evolution_chain.url
-                    }
-
-                    //Puts 'normal' type in slot 2 if there are two types
-                    if(newPokemon.types[0].name === 'normal' && newPokemon.types[1]) {
-                        newPokemon.types = newPokemon.types.reverse()
                     }
 
                     pokemon.push({...newPokemon})
