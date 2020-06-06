@@ -20,8 +20,8 @@ export class PokemonMember extends Component {
             style.backgroundColor = getTypeColor(pokemon.types[0]) 
             style.borderColor = chroma(getTypeColor(pokemon.types[0])).darken(1)
             if(pokemon.types[1]) {
-                style.borderRight = `.7vh solid ${chroma(getTypeColor(pokemon.types[1])).darken(1)}`
-                style.borderBottom = `.7vh solid ${chroma(getTypeColor(pokemon.types[1])).darken(1)}`
+                style.borderRight = `.8vh solid ${chroma(getTypeColor(pokemon.types[1])).darken(1)}`
+                style.borderBottom = `.8vh solid ${chroma(getTypeColor(pokemon.types[1])).darken(1)}`
             }
         }
 
@@ -37,12 +37,16 @@ export class PokemonMember extends Component {
         const pokemon = this.props.pokemonMember
         if(pokemon) {
             return <img src={pokemon.sprite} alt=''/>
-        } else return null
+        } else return <div className='pokeball'>         
+            <div className='top-half'></div>
+            <div className='bottom-half'></div>
+            <div className='middle-ball'></div>
+        </div>
     }
     renderTypes = () => {
         if(this.props.pokemonMember) {
             return this.props.pokemonMember.types.map(type => (
-                <PokemonType type={type}/>
+                <PokemonType type={type} key={`pokemonmember-${this.props.slot}-type-${type}`}/>
             ))
         }
     }
@@ -51,8 +55,9 @@ export class PokemonMember extends Component {
             <div className='pokemon'>
                 <p className='name'>{this.renderName()}</p>
                 <div className='sprite' onClick={this.removePokemonFromTeam} style={this.getStyle()}>
-                    <div className='overlay'></div>
                     {this.renderSprite()}
+                    <div className='overlay'></div>
+
                 </div>
                 <div className='types' >
                     {this.renderTypes()}

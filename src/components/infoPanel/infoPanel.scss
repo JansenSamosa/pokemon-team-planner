@@ -9,41 +9,95 @@
     background-color: $primary_color;
     border-radius: .8vh;
     box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
-
-    .columns {
-        width: 100%;
+    .empty-team {
+        width:100%;
         height: 100%;
-        
-        .column {
-            overflow: hidden;
-            float: left;
-            height: 100%;
-            width: 15.6666%;
-            margin:.40%;
-            border:1px solid darken($primary_color, 2%);
-            border-bottom: none;
-            border-top: none;
-            * {
-                margin: auto;
+        h1 {
+            color: lighten($primary_color, 10%);
+            text-align: center;
+            font-size:3vh;
+            position: relative;
+            top:50%;
+            transform: translateY(-50%);
+            p {
+                color: lighten($primary_color, 10%);
+                font-size:1.7vh;
             }
-            .row {
-                clear:both;
-                width: 100%;
-                display: inline-block;
-                height:20%;
-                margin-bottom: 2%;
+        }
+    }
+    .overview {
+        margin:1%;
+        width:98%;
+        height:98%;
+        .title {
+            margin-bottom: 3%;
+            font-size: 3.2vh;
+            border-bottom: .2vh solid lighten($primary_color,15%);
+        }
+        .types {
+            background-color: $secondary_color;
+            padding:1%;
+            width:50%;
+            height: 83%;
+            float:left;
+            border-radius: .8vh;
+            box-shadow: 0 .3vh .25vh darken($primary-color, 5%);
+            .good, .average, .bad {
+                width:100%;
+                margin-bottom: 10%;
+                float: left;
                 h1 {
-                    color:white;
-                    font-size:.8vw;
-                    width: 100%;
-                    text-align: center;
                     margin-bottom: 5%;
-
+                    font-size: .9vw;
+                    float:left;
+                }
+                p {
+                    float:left;
+                    margin-left: 1%;
+                    font-size: .7vw;
+                    color: lighten($secondary_color, 15%);
+                }
+                .clearleft {
+                    clear:left;
                 }
                 .pokemon-type {
-                    width:20%;
-                    font-size: .5vw;
                     float:left;
+                    margin:.5%;
+                    padding:.5vh;
+                    width:2vw;
+                }
+            }
+        }
+        .stats-avg {
+            float:left;
+            width:44%;
+            margin-left:1.5%;
+            padding: 1%;
+            background-color: $secondary_color;
+            border-radius: .8vh;
+            box-shadow: 0 .3vh .25vh darken($primary-color, 5%);
+            .stats {
+                position: relative;
+                
+                .stat {
+                    float: left;
+                    width:40%;
+                    margin:1%;
+                    font-weight: bold;
+                    * {
+                        color: lighten($primary-color, 60%);
+                        text-align: center;
+                    }
+                    .stat-name {
+                        margin-bottom: 5%;
+                        text-decoration: underline;
+                        font-size: .8vw;
+                        color: lighten($primary-color, 50%);
+                    }
+                    .stat-num {
+                        font-size: 1vw;
+                        color: lighten($primary-color, 80%);
+                    }
                 }
             }
         }

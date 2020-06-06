@@ -32,7 +32,7 @@ export class PokemonList extends Component {
         return (
             <div className='pokemon-list'>
                 {this.getPokemonList().map(pokemon => (
-                    <Pokemon pokemon={pokemon} key={pokemon.num}/>
+                    <Pokemon pokemon={pokemon} key={`pokemon-${pokemon.num}`}/>
                 ))}
             </div>
         )

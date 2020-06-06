@@ -86,7 +86,14 @@
             box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
             overflow: hidden;
             cursor: pointer;
-
+            .pokedex-num {
+                position: absolute;
+                font-weight: bold;
+                font-size:.8vw;
+                left:.5%;
+                bottom:.5%;
+                color: lighten($secondary-color,15%)
+            }
             .sprite {
                 height: 100%;
                 position: relative;
@@ -99,25 +106,56 @@
                     height:100%;
                 }
                 
+                
             }
             .info {
-                position: relative;
-                left:2%;
-                float:left;
+                position: absolute; 
+                left:20%;
                 height: 90%;
+                width:70%;
                 h1 {
                     width:100%;
                     font-weight: bold;
                     font-size: 2vh;
                     text-align: left;
                     color:white;
-                    margin-bottom: 10%;
                 }
                 .types {
+                    float:left;
+                    width:10%;
                     .pokemon-type {
+                        width:100%;
                         margin-top:3%;
                     }
                 }   
+                .stats {
+                    float:left;
+                    position: absolute;
+                    top:50%;
+                    transform: translateY(-50%);
+                    right:0;
+                    margin-left: 10%;
+                    font-size: .8vw;
+                    .stat-names, .stat-nums {
+                        p {
+                            color: lighten($secondary-color, 50%);
+                            font-weight: bold;
+                            text-align: center;
+                            width:3.5vw;
+                            float:left;
+                        }
+                    }
+                    .stat-names {
+                        margin-bottom: 4%;
+                        p {
+                            text-decoration: underline;
+                        }
+                    }
+                    .stat-nums {
+                        margin-top: 4%;
+                        clear:left;
+                    }
+                }
             }  
             .type-color, .type2-color {
                 width: 50%;
