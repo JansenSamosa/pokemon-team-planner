@@ -66,6 +66,7 @@ export class Pokemon extends Component {
 
     render() {
         return (
+            
             <div className='pokemon' onClick={this.addPokemonToTeam}>
                 <div className='type-color' style={this.getTypeColorBarStyle(0)}/>
                 <div className='type2-color' style={this.getTypeColorBarStyle(1)}/>

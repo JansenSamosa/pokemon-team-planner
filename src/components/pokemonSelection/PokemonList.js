@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FixedSizeList as List} from 'react-window'
-import LazyLoad from 'react-lazyload'
+import AutoSizer from 'react-virtualized-auto-sizer'
 
 import Pokemon from './Pokemon'
 
@@ -32,13 +32,26 @@ export class PokemonList extends Component {
     }
 
     render() {
+        const pokemonList = this.getPokemonList()
         return (
             <div className='pokemon-list'>
-                {this.getPokemonList().map(pokemon => (
-                    <LazyLoad>
-                        <Pokemon pokemon={pokemon} key={`pokemon-${pokemon.num}`}/>
-                    </LazyLoad>
-                ))}
+                <AutoSizer>
+                    {({ height, width }) => (
+                        <List
+                        className='list'
+                        height={height}
+                        itemCount={pokemonList.length}
+                        itemSize={height/5}
+                        width={width}
+                    >
+                        {({index, style}) => 
+                            <div style={style}>
+                                <Pokemon pokemon={pokemonList[index]} key={`pokemon-${pokemonList[index].num}`}/>
+                            </div>
+                        }
+                    </List>
+                    )}
+                </AutoSizer>
             </div>
         )
     }
@@ -56,3 +69,7 @@ export default PokemonList
                 >
                     {({index, style}) => <Pokemon pokemon={pokemonList[index]} style={style}key={`pokemon-${pokemonList[index].num}`}/>}
                 </List>*/
+
+                /*{this.getPokemonList().map(pokemon => (
+                        <Pokemon pokemon={pokemon} key={`pokemon-${pokemon.num}`}/>
+                ))}*/

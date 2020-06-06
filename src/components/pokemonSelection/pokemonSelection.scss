@@ -12,49 +12,55 @@
 
     .search-filter-sort-bar {
         position: relative;
-        background-color: $secondary-color;
-        padding: 1%;
+        background-color: darken($secondary-color, 0);
         border-radius: .8vh;
-        box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
+        box-shadow: 0 .3vh .25vh darken($secondary-color, 10%);
         width:95%;
-        height:2%;
+        height:3%;
         margin:auto;
         margin-top: 1.5%;
+        padding: 1%;
         z-index: 5;
         * {
             font-size: 1.35vh;
-            position: relative;
-            top:50%;
-            transform: translateY(-50%);
+            float:left;
+            background-color: lighten($primary_color, 15%);
+            border-radius: .3vh;
+            border: none;
+            color: white;
+            outline: none;
+            height:100%;
+            margin-right:1%;
         }
         input[type='text']{
-            
             width:35%;
-            outline: none;
-            border-radius: .3vh;
-            background-color: lighten($primary_color, 15%);
-            border: none;
-            color: white;
-            padding:.5%;
         }
-        select {
-            background-color: lighten($primary_color, 15%);
-            border: none;
-            outline: none;
-            border-radius: .3vh;
-            padding:.3vh;
-            margin-left: 1%;
-            color: white;
-            cursor: pointer;
+        .type-filter {
+            width:10%;
+            position: relative;
+            select {
+                width:100%;
+                height: 100%;
+                cursor: pointer;
+                appearance: none;
+                padding: 5%;
+            }
+            .arrow {
+                height:1vh;
+                width:1vh;
+                position: absolute;
+                border-radius: 0;
+                right:10%;
+                top:15%;
+                background: none;
+                transform: rotateZ(45deg);
+                border-bottom: .15em solid white;
+                border-right: .15em solid white;
+            }
         }
+        
         .toggle-finalevo-filter {
-            background-color: lighten($primary_color, 15%);
-            border: none;
-            outline: none;
-            border-radius: .3vh;
-            padding:.4vh;
-            margin-left: 1%;
-            color: white;
+            width:20%;
             cursor: pointer;
         }
         .toggle-finalevo-filter.on {
@@ -72,10 +78,6 @@
     .pokemon-list {
         width: 100%;
         height: 93.5%;
-        overflow-y: scroll;
-        .list {
-            
-        }
         .pokemon {
             background-color: $secondary-color;
             width:95%;
@@ -83,7 +85,7 @@
             margin-top: 1%;
             padding: 1%;
             border-radius: .8vh;
-            height: 14.2%;
+            height: 85%;
             position: relative;
             box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
             overflow: hidden;
@@ -201,3 +203,123 @@
 ::-webkit-scrollbar {
     display:none;
 }
+
+/*.pokemon {
+            background-color: $secondary-color;
+            width:95%;
+            margin: auto;
+            margin-top: 1%;
+            padding: 1%;
+            border-radius: .8vh;
+            height: 14.2%;
+            position: relative;
+            box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
+            overflow: hidden;
+            cursor: pointer;
+            .pokedex-num {
+                position: absolute;
+                font-weight: bold;
+                font-size:.8vw;
+                left:.5%;
+                bottom:.5%;
+                color: lighten($secondary-color,15%)
+            }
+            .sprite {
+                height: 100%;
+                position: relative;
+                top:50%;
+                transform: translateY(-50%);
+                float:left;
+                border-radius: 50%;
+                padding:.5%;
+                img {
+                    height:100%;
+                }
+                
+                
+            }
+            .info {
+                position: absolute; 
+                left:20%;
+                height: 90%;
+                width:70%;
+                h1 {
+                    width:100%;
+                    font-weight: bold;
+                    font-size: 2vh;
+                    text-align: left;
+                    color:white;
+                }
+                .types {
+                    float:left;
+                    width:10%;
+                    .pokemon-type {
+                        width:100%;
+                        margin-top:3%;
+                    }
+                }   
+                .stats {
+                    float:left;
+                    position: absolute;
+                    top:50%;
+                    transform: translateY(-50%);
+                    right:0;
+                    margin-left: 10%;
+                    font-size: .8vw;
+                    .stat-names, .stat-nums {
+                        p {
+                            color: lighten($secondary-color, 50%);
+                            font-weight: bold;
+                            text-align: center;
+                            width:3.5vw;
+                            float:left;
+                        }
+                    }
+                    .stat-names {
+                        margin-bottom: 4%;
+                        p {
+                            text-decoration: underline;
+                        }
+                    }
+                    .stat-nums {
+                        margin-top: 4%;
+                        clear:left;
+                    }
+                }
+            }  
+            .type-color, .type2-color {
+                width: 50%;
+                height:2.5%;
+                opacity: .3;
+                margin:0;
+                position: absolute;
+            }
+            .type-color {
+                top:0;
+                left:0;
+            }
+            .type2-color {
+                top:0%;
+                right:0;
+            }
+        }
+        .pokemon:hover {
+            background-color: darken($secondary-color, 1%);
+            box-shadow: 0 .15vh .25vh darken($bg-color, 10%);
+            .sprite {
+                animation: jumpr 350ms infinite 0ms;
+
+                img {
+                }
+            }
+            
+            @keyframes jumpr {
+                0% {top:50%}
+                50% {top:45%}
+                100% {top:50%}
+            }
+        }
+        .pokemon:active {
+            background-color: darken($secondary-color, 3%);
+            box-shadow: 0 .15vh .25vh darken($bg-color, 10%);
+        }*/
