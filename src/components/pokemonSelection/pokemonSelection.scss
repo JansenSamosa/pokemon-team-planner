@@ -73,7 +73,9 @@
         width: 100%;
         height: 93.5%;
         overflow-y: scroll;
-        
+        .list {
+            
+        }
         .pokemon {
             background-color: $secondary-color;
             width:95%;
@@ -81,7 +83,7 @@
             margin-top: 1%;
             padding: 1%;
             border-radius: .8vh;
-            height: 17.2%;
+            height: 14.2%;
             position: relative;
             box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
             overflow: hidden;

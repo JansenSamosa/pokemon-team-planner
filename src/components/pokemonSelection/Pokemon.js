@@ -63,6 +63,7 @@ export class Pokemon extends Component {
         )
         return jsx
     }
+
     render() {
         return (
             <div className='pokemon' onClick={this.addPokemonToTeam}>
