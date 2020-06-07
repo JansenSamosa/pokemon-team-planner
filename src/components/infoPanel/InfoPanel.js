@@ -88,39 +88,37 @@ export class InfoPanel extends Component {
                 <div className='stats'>
                     <div className='stat'>
                         <p className='stat-name'>Speed<sub></sub></p>
-                        <p className='stat-num'>{avgStats[0]}</p>
+                        <p className='stat-num'>{avgStats[5]}</p>
                         <p className='stat-avg'>(avg)</p>
                     </div>
                     <div className='stat'>
                         <p className='stat-name'>HP</p>
-                        <p className='stat-num'>{avgStats[5]}</p>
+                        <p className='stat-num'>{avgStats[0]}</p>
                         <p className='stat-avg'>(avg)</p>
-
-                    </div>
-                    <div className='stat'>
-                        <p className='stat-name'>Defense</p>
-                        <p className='stat-num'>{avgStats[3]}</p>
-                        <p className='stat-avg'>(avg)</p>
-
                     </div>
                     <div className='stat'>
                         <p className='stat-name'>Attack</p>
-                        <p className='stat-num'>{avgStats[4]}</p>
-                        <p className='stat-avg'>(avg)</p>
-
-                    </div>
-                    <div className='stat'>
-                        <p className='stat-name'>Special Defense</p>
                         <p className='stat-num'>{avgStats[1]}</p>
                         <p className='stat-avg'>(avg)</p>
-
                     </div>
                     <div className='stat'>
                         <p className='stat-name'>Special Attack</p>
+                        <p className='stat-num'>{avgStats[3]}</p>
+                        <p className='stat-avg'>(avg)</p>
+                    </div>
+                    
+                    <div className='stat'>
+                        <p className='stat-name'>Defense</p>
                         <p className='stat-num'>{avgStats[2]}</p>
                         <p className='stat-avg'>(avg)</p>
-
                     </div>
+                    
+                    <div className='stat'>
+                        <p className='stat-name'>Special Defense</p>
+                        <p className='stat-num'>{avgStats[4]}</p>
+                        <p className='stat-avg'>(avg)</p>
+                    </div>
+                    
                 </div>
             </div>
         </div>
