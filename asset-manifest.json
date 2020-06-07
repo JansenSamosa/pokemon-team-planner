@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/pokemon-team-planner/static/css/main.785d536b.chunk.css",
-    "main.js": "/pokemon-team-planner/static/js/main.5e3917a9.chunk.js",
-    "main.js.map": "/pokemon-team-planner/static/js/main.5e3917a9.chunk.js.map",
+    "main.css": "/pokemon-team-planner/static/css/main.d6a713bc.chunk.css",
+    "main.js": "/pokemon-team-planner/static/js/main.ebdb9719.chunk.js",
+    "main.js.map": "/pokemon-team-planner/static/js/main.ebdb9719.chunk.js.map",
     "runtime-main.js": "/pokemon-team-planner/static/js/runtime-main.39306a3b.js",
     "runtime-main.js.map": "/pokemon-team-planner/static/js/runtime-main.39306a3b.js.map",
     "static/js/2.e3bcd548.chunk.js": "/pokemon-team-planner/static/js/2.e3bcd548.chunk.js",
     "static/js/2.e3bcd548.chunk.js.map": "/pokemon-team-planner/static/js/2.e3bcd548.chunk.js.map",
     "index.html": "/pokemon-team-planner/index.html",
-    "precache-manifest.38ccce0463ac74efa7d9c919d677f985.js": "/pokemon-team-planner/precache-manifest.38ccce0463ac74efa7d9c919d677f985.js",
+    "precache-manifest.829b51574857fa9500013bdd10c762b1.js": "/pokemon-team-planner/precache-manifest.829b51574857fa9500013bdd10c762b1.js",
     "service-worker.js": "/pokemon-team-planner/service-worker.js",
-    "static/css/main.785d536b.chunk.css.map": "/pokemon-team-planner/static/css/main.785d536b.chunk.css.map",
+    "static/css/main.d6a713bc.chunk.css.map": "/pokemon-team-planner/static/css/main.d6a713bc.chunk.css.map",
     "static/js/2.e3bcd548.chunk.js.LICENSE.txt": "/pokemon-team-planner/static/js/2.e3bcd548.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.39306a3b.js",
     "static/js/2.e3bcd548.chunk.js",
-    "static/css/main.785d536b.chunk.css",
-    "static/js/main.5e3917a9.chunk.js"
+    "static/css/main.d6a713bc.chunk.css",
+    "static/js/main.ebdb9719.chunk.js"
   ]
 }
