@@ -5,7 +5,7 @@ export class SearchFilterSortBar extends Component {
         search: '',
         typeFilter: 'all',
         finalEvoFilter: false,
-        sort: ''
+        sort: 'pokedex entry'
     }
 
     setSearchOptions = () => {
@@ -19,6 +19,9 @@ export class SearchFilterSortBar extends Component {
     }
     setTypeFilter = e => {
         this.setState({...this.state, typeFilter: e.target.value}, this.setSearchOptions())
+    }
+    setSort = e => {
+        this.setState({...this.state, sort: e.target.value}, this.setSearchOptions())
     }
     toggleFinalEvoFilter = () => {
         const finalEvoFilter = !this.state.finalEvoFilter
@@ -34,7 +37,7 @@ export class SearchFilterSortBar extends Component {
                 <input type='text' onChange={this.changeSearch.bind(this)} placeholder='Search for pokemon'/>
                 <div className='type-filter'>
                     <select onChange={this.setTypeFilter.bind(this)}>
-                        <option value='all'>All</option>
+                        <option value='all'>All Types</option>
                         <option value='normal'>Normal</option>
                         <option value='grass'>Grass</option>
                         <option value='fire'>Fire</option>
@@ -59,6 +62,20 @@ export class SearchFilterSortBar extends Component {
                 <button onClick={this.toggleFinalEvoFilter} className={`toggle-finalevo-filter ${this.getToggleStyle(this.state.finalEvoFilter)}`}>
                     Final Evolutions Only
                 </button>
+                <div className='sort-method'>
+                    <select onChange={this.setSort.bind(this)}>
+                        <option value='pokedex-entry'>Pokedex Entry</option>
+                        <option value='stat-average'> Stat Average</option>
+                        <option value='stat-hp'> Stat HP</option>
+                        <option value='stat-attack'> Stat Attack</option>
+                        <option value='stat-defense'> Stat Defense</option>
+                        <option value='stat-specialattack'> Stat SpAttack</option>
+                        <option value='stat-specialdefense'> Stat SpDefense</option>
+                        <option value='stat-speed'> Stat Speed</option>
+                    </select>
+                    <div className='arrow'></div>
+                </div>
+                
             </div>
         )
     }

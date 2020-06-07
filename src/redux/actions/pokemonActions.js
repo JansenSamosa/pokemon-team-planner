@@ -25,7 +25,7 @@ export const fetchPokemon = () => {
                         num: res1.data.id, 
                         name: res1.data.name,
                         types: types.map(type => type.type.name),
-                        //stats order is - speed, sdef, satk, def, atk, hp
+                        //stats order is - hp, atk, def, spatk, spdef, speed
                         stats: res1.data.stats.map(stat => stat.base_stat),
                         //isFinalEvo is set during dispatch
                         isFinalEvo: false,

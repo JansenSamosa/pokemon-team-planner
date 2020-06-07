@@ -7,6 +7,11 @@ import Pokemon from './Pokemon'
 
 export class PokemonList extends Component {
 
+    getStatAverage = stats => {
+        //gets average of all stats(speed, hp, attack, etc...)
+        let avg = (stats[0] + stats[1] + stats[2] + stats[3] + stats[4] + stats[5])/6
+        return avg
+    }
     getPokemonList = () => {
         let { search, typeFilter, finalEvoFilter, sort } = this.props.searchOptions
 
@@ -25,6 +30,32 @@ export class PokemonList extends Component {
                 }
             })
         }
+        //Sorts the pokemonList depending of value of sort
+        switch(sort) {
+            case 'stat-average':
+                pokemonList = pokemonList.sort((a,b) => this.getStatAverage(b.stats) - this.getStatAverage(a.stats))
+                break
+            case 'stat-speed':
+                pokemonList = pokemonList.sort((a,b) => b.stats[5] - a.stats[5])
+                break
+            case 'stat-hp':
+                pokemonList = pokemonList.sort((a,b) => b.stats[0] - a.stats[0])
+                break
+            case 'stat-attack':
+                pokemonList = pokemonList.sort((a,b) => b.stats[1] - a.stats[1])
+                break
+            case 'stat-defense':
+                pokemonList = pokemonList.sort((a,b) => b.stats[2] - a.stats[2])
+                break
+            case 'stat-specialattack':
+                pokemonList = pokemonList.sort((a,b) => b.stats[3] - a.stats[3])
+                break
+            case 'stat-specialdefense':
+                pokemonList = pokemonList.sort((a,b) => b.stats[4] - a.stats[4])
+                break
+            default:
+                break
+        }
         if(finalEvoFilter) {
             pokemonList = pokemonList.filter(pokemon => pokemon.isFinalEvo && !pokemon.isBaby)
         }
@@ -35,10 +66,9 @@ export class PokemonList extends Component {
         const pokemonList = this.getPokemonList()
         return (
             <div className='pokemon-list'>
-                <AutoSizer>
+                <AutoSizer >
                     {({ height, width }) => (
                         <List
-                        className='list'
                         height={height}
                         itemCount={pokemonList.length}
                         itemSize={height/5}

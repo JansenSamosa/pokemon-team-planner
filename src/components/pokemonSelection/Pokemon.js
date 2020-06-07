@@ -39,18 +39,18 @@ export class Pokemon extends Component {
         return style
     }
     renderStats = () => {
-        //stats order is - speed, sdef, satk, def, atk, hp
+        //stats order is - hp, atk, def, spatk, spdef, speed
         let jsx = []
 
         //pushes stat names into jsx
         jsx.push(
             <div className='stat-names'>
-                <p>Speed</p>
-                <p>SDef</p>
-                <p>SAtk</p>
-                <p>Def</p>
-                <p>Atk</p>
                 <p>HP</p>
+                <p>Atk</p>
+                <p>Def</p>
+                <p>SpAtk</p>
+                <p>SpDef</p>
+                <p>Speed</p>
             </div>
         )
         //pushes the stat numbers into jsx

@@ -29,9 +29,10 @@
         margin:1%;
         width:98%;
         height:98%;
+        float: left;
         .title {
             margin-bottom: 3%;
-            font-size: 3.2vh;
+            font-size: 3.2vmin;
             border-bottom: .2vh solid lighten($primary_color,15%);
         }
         .types {
@@ -70,6 +71,7 @@
         }
         .stats-avg {
             float:left;
+            height: 83%;
             width:44%;
             margin-left:1.5%;
             padding: 1%;
@@ -78,12 +80,15 @@
             box-shadow: 0 .3vh .25vh darken($primary-color, 5%);
             .stats {
                 position: relative;
-                
+                width:100%;
+                height:100%;
                 .stat {
                     float: left;
-                    width:40%;
+                    width:48%;
+                    height:33%;
                     margin:1%;
                     font-weight: bold;
+
                     * {
                         color: lighten($primary-color, 60%);
                         text-align: center;
@@ -92,13 +97,78 @@
                         margin-bottom: 5%;
                         text-decoration: underline;
                         font-size: .8vw;
+                        height:11%;
                         color: lighten($primary-color, 50%);
                     }
                     .stat-num {
-                        font-size: 1vw;
+                        font-size: 3.5vw;
+                        height:55%;
                         color: lighten($primary-color, 80%);
                     }
+                    .stat-avg {
+                        font-size: .5vw;
+                        height: 28%;
+                        color: lighten($primary-color, 20%);
+                    }
                 }
+            }
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    .info-panel {
+        .overview {
+            .types {
+                @include center-horizontally;
+                width:96%;
+                height:48%;
+                .good, .average, .bad {
+                    float:left;
+                    width:33%;
+                    height:100%;
+                    h1 {
+                        float:left;
+                        font-size: 1.25vh;
+                        text-align: center;
+                        width: 100%;
+                        margin-bottom: 0;
+                    }
+                    p {
+                        float:left;
+                        width: 100%;
+                        text-align: center;
+                        font-size: 1vh;
+                        margin-bottom: 1%;
+                    }
+                    .pokemon-type {
+                        height:4%;
+                        width:39%;
+                        font-size: 1vh;
+                    }
+                }
+            }
+            .stats-avg {
+                float: left;
+                width:96%;
+                height:40%;
+                margin:1%;
+                .stats {
+                    .stat {
+                        width:31.333%;
+                        height: 50%;
+                        .stat-name {
+                            font-size: 1.25vh;
+                        }
+                        .stat-num {
+                            font-size: 3.5vh;
+                        }
+                        .stat-avg {
+                            font-size: 1vh;
+                        }
+                    }
+                }
+                
             }
         }
     }

@@ -9,32 +9,37 @@
     border-radius: .8vh;
     box-shadow: 0 .3vh .25vh darken($bg-color, 10%);
     .team-pokemon {
-        position: relative;
-        top:7.5%;
-        height:85%;
-
+        height:100%;
+        padding: 1%;
+        
         .pokemon {
-            width:16.6666%;
-            height: 100%;
             float:left;
-            position: relative;
-
+            width:16.666666%;
+            height: 75%;
+            @media (orientation: landscape) {
+                @include center-vertically;
+            }
             .name {
-                position: absolute;
+                float:left;
                 top:10%;
                 width:100%;
+                height: 10%;
+                position: relative;
+                top:-2%;
                 text-align: center;
                 color:white;
                 font-weight: bold;
                 font-size: 1vw;
             }
             .sprite {
+                @media (orientation: landscape) {
+                    @include center-horizontally;
+                }
                 position: relative;
+                float:left;
                 width:7vw;
                 height:7vw;
                 margin:auto;
-                top:50%;
-                transform: translateY(-50%);
                 background-color: $team-member-empty;
                 border-radius: 10000000vh;
                 border:.5vh solid darken($team-member-empty, 20%);
@@ -116,16 +121,39 @@
                 }
             }
             .types {
-                position: absolute;
-                bottom:-5%;
-                margin:auto;
-                left:50%;
-                transform: translateX(-50%);
+                float:left;
+                position: relative;
+                @media (orientation: landscape) {
+                    @include center-horizontally;
+                }
                 .pokemon-type {
+                    height:10%;
                     margin-top: 7%;
                 }
             }
         }
     }
 }
-   
+
+@media (orientation: portrait) {
+    .team-manager {
+        .team-pokemon {
+            .pokemon {
+                width: 33.3333%;
+                height:49%;
+                .name {
+                    font-size: 1.5vh;
+                }
+                .sprite {
+                    width:12vh;
+                    height:12vh;
+                    @include center-horizontally;
+                }
+                .types {
+                    display: none;
+                   
+                }
+            }
+        }
+    }
+}
