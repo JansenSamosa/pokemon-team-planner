@@ -54,6 +54,7 @@ export class PokemonList extends Component {
                 pokemonList = pokemonList.sort((a,b) => b.stats[4] - a.stats[4])
                 break
             default:
+                pokemonList = pokemonList.sort((a,b) => a.num - b.num)
                 break
         }
         if(finalEvoFilter) {

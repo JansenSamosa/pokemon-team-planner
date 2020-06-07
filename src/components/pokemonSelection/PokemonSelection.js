@@ -12,7 +12,7 @@ export class PokemonSelection extends Component {
             search: '',
             typeFilter: 'all',
             finalEvoFilter: false,
-            sort: 'pokedex entry'
+            sort: 'pokedex-entry'
         }
     }
     setSearchOptions = newSearchOptions => {

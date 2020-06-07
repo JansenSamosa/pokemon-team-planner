@@ -117,7 +117,7 @@
             }
             .info {
                 position: absolute; 
-                left:20%;
+                left:25%;
                 height: 90%;
                 width:70%;
                 h1 {
@@ -126,6 +126,7 @@
                     font-size: 2vh;
                     text-align: left;
                     color:white;
+                    margin-bottom: 2%;
                 }
                 .types {
                     float:left;
@@ -140,15 +141,16 @@
                     position: absolute;
                     top:50%;
                     transform: translateY(-50%);
-                    right:0;
+                    right:5%;
                     margin-left: 10%;
-                    font-size: .8vw;
+                    font-size: .8vmax;
                     .stat-names, .stat-nums {
                         p {
                             color: lighten($secondary-color, 50%);
                             font-weight: bold;
                             text-align: center;
-                            width:3.8vw;
+                            width:3.8vmax;
+
                             float:left;
                         }
                     }
