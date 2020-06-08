@@ -30,6 +30,12 @@ export const fetchPokemon = () => {
                         //isFinalEvo is set during dispatch
                         isFinalEvo: false,
                         isBaby: res2.data.is_baby,
+                        descriptions: res2.data.flavor_text_entries.filter(entry => entry.language.name === 'en').map(entry => {
+                            return {
+                                text: entry.flavor_text,
+                                game: entry.version.name
+                            }
+                        }),
                         sprite: res1.data.sprites.front_default,
                         evolution_chain_url: res2.data.evolution_chain.url
                     }

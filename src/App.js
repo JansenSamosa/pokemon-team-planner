@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 
 import store from './redux/store'
 import { fetchPokemon } from './redux/actions/pokemonActions'
+import { setSelectedPokemon } from './redux/actions/teamActions'
 
 import PokemonSelection from './components/pokemonSelection/PokemonSelection'
 import TeamManager from './components/teamManager/TeamManager'

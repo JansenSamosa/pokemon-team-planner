@@ -12,7 +12,7 @@ export class PokemonType extends Component {
             return { backgroundColor: `${getTypeColor(this.props.type)}`}
         } else {
             return { backgroundColor: `${getTypeColor(this.props.type)}`,
-                    border: `.25vw solid ${chroma(getTypeColor(this.props.type)).darken(.5)}`}
+                    border: `.25vmax solid ${chroma(getTypeColor(this.props.type)).darken(.5)}`}
         }
     }
     render() {

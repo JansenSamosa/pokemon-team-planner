@@ -233,3 +233,9 @@ export const getTypeDefenseStrengths = types => {
     }
     return strengths
 }
+
+
+//Uppercases first letter of a string and returns it
+export const uppercase = str => {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+}

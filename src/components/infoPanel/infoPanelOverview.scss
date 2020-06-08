@@ -44,9 +44,13 @@
             border-radius: .8vh;
             box-shadow: 0 .3vh .25vh darken($primary-color, 5%);
             .good, .average, .bad {
-                width:100%;
+                width:98%;
                 margin-bottom: 10%;
                 float: left;
+                border-radius: .8vh;
+                background-color: darken($secondary-color, 3%);
+                box-shadow: 0 .3vh .25vh darken($primary-color, 2.5%);
+                padding:1%;
                 h1 {
                     margin-bottom: 5%;
                     font-size: .9vw;
@@ -125,8 +129,8 @@
                 height:48%;
                 .good, .average, .bad {
                     float:left;
-                    width:33%;
-                    height:100%;
+                    width:31%;
+                    height:95%;
                     h1 {
                         float:left;
                         font-size: 1.25vh;

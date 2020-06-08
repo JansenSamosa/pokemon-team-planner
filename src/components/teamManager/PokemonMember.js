@@ -6,7 +6,7 @@ import { getTypeColor } from '../../Helpers'
 
 import PokemonType from '../PokemonType'
 
-import { removeFromTeam } from '../../redux/actions/teamActions'
+import { removeFromTeam, setSelectedPokemon } from '../../redux/actions/teamActions'
 
 export class PokemonMember extends Component {
 
@@ -18,10 +18,13 @@ export class PokemonMember extends Component {
         if(this.props.pokemonMember) {
             const pokemon = this.props.pokemonMember
             style.backgroundColor = getTypeColor(pokemon.types[0]) 
-            style.borderColor = chroma(getTypeColor(pokemon.types[0])).darken(1)
             if(pokemon.types[1]) {
-                style.borderRight = `.8vh solid ${chroma(getTypeColor(pokemon.types[1])).darken(1)}`
-                style.borderBottom = `.8vh solid ${chroma(getTypeColor(pokemon.types[1])).darken(1)}`
+                style.borderLeft = `.5vh solid ${chroma(getTypeColor(pokemon.types[0])).darken(1)}`
+                style.borderTop = `.5vh solid ${chroma(getTypeColor(pokemon.types[0])).darken(1)}`
+                style.borderRight = `.85vh solid ${chroma(getTypeColor(pokemon.types[1])).darken(1)}`
+                style.borderBottom = `.85vh solid ${chroma(getTypeColor(pokemon.types[1])).darken(1)}`
+            } else {
+                style.borderColor = chroma(getTypeColor(pokemon.types[0])).darken(1)
             }
         }
 
@@ -43,6 +46,16 @@ export class PokemonMember extends Component {
             <div className='middle-ball'></div>
         </div>
     }
+    renderInfoBtn = () => {
+        if(this.props.pokemonMember) return (
+        <p 
+            className='more-info-btn'
+            onClick={e => {
+                e.stopPropagation()
+                this.props.setSelectedPokemon(this.props.pokemonMember.num)
+            }}
+        >?</p>)
+    }
     renderTypes = () => {
         if(this.props.pokemonMember) {
             return this.props.pokemonMember.types.map(type => (
@@ -56,8 +69,8 @@ export class PokemonMember extends Component {
                 <p className='name'>{this.renderName()}</p>
                 <div className='sprite' onClick={this.removePokemonFromTeam} style={this.getStyle()}>
                     {this.renderSprite()}
+                    {this.renderInfoBtn()}
                     <div className='overlay'></div>
-
                 </div>
                 <div className='types' >
                     {this.renderTypes()}
@@ -71,4 +84,4 @@ const mapStateToProps = (state, ownProps) => ({
     pokemonMember: state.pokemon.filter(pokemon => pokemon.num === parseInt(state.team.team[parseInt(ownProps.slot)-1]))[0]
 })
 
-export default connect(mapStateToProps, { removeFromTeam })(PokemonMember)
+export default connect(mapStateToProps, { removeFromTeam, setSelectedPokemon })(PokemonMember)

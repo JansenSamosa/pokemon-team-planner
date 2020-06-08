@@ -6,7 +6,7 @@ import PokemonType from '../PokemonType'
 
 import { getTypeColor } from '../../Helpers'
 
-import { addToTeam } from '../../redux/actions/teamActions'
+import { addToTeam, setSelectedPokemon } from '../../redux/actions/teamActions'
 
 export class Pokemon extends Component {
 
@@ -44,18 +44,18 @@ export class Pokemon extends Component {
 
         //pushes stat names into jsx
         jsx.push(
-            <div className='stat-names'>
-                <p>HP</p>
-                <p>Atk</p>
-                <p>Def</p>
-                <p>SpAtk</p>
-                <p>SpDef</p>
-                <p>Speed</p>
+            <div key='stat-names' className='stat-names'>
+                <p key='stat-hp-name'>HP</p>
+                <p key='stat-atk-name'>Atk</p>
+                <p key='stat-def-name'>Def</p>
+                <p key='stat-spatk-name'>SpAtk</p>
+                <p key='stat-apdef-name'>SpDef</p>
+                <p key='stat-speed-name'>Speed</p>
             </div>
         )
         //pushes the stat numbers into jsx
         jsx.push(
-            <div className='stat-nums'>
+            <div key='stat-nums' className='stat-nums'>
                 {this.props.pokemon.stats.map((stat, index) => (
                     <p key={`${this.props.pokemon.name}-stat-${index}`}>{`${stat}`}</p>
                 ))}
@@ -63,7 +63,10 @@ export class Pokemon extends Component {
         )
         return jsx
     }
-
+    viewInfo = e => {
+        e.stopPropagation()
+        this.props.setSelectedPokemon(this.props.pokemon.num)
+    }
     render() {
         return (
             
@@ -71,6 +74,7 @@ export class Pokemon extends Component {
                 <div className='type-color' style={this.getTypeColorBarStyle(0)}/>
                 <div className='type2-color' style={this.getTypeColorBarStyle(1)}/>
                 <p className='pokedex-num'>{this.getPokedexNum()}</p>
+                <p className='more-info-btn' onClick={this.viewInfo.bind(this)}>?</p>
                 <div className='sprite'>
                     <img src={this.props.pokemon.sprite}></img>
                 </div>
@@ -94,4 +98,4 @@ export class Pokemon extends Component {
     }
 }
 
-export default connect(null, {addToTeam})(Pokemon)
+export default connect(null, {addToTeam, setSelectedPokemon})(Pokemon)

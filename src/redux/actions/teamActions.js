@@ -1,4 +1,4 @@
-import { ADD_TO_TEAM, REMOVE_FROM_TEAM } from '../types'
+import { ADD_TO_TEAM, REMOVE_FROM_TEAM, SET_SELECTED_POKEMON } from '../types'
 
 export const addToTeam = pokemon => {
     return dispatch => {
@@ -17,6 +17,17 @@ export const removeFromTeam = slot => {
             type: REMOVE_FROM_TEAM,
             payload: {
                 slot   
+            }
+        })
+    }
+}
+
+export const setSelectedPokemon = id => {
+    return dispatch => {
+        dispatch({
+            type: SET_SELECTED_POKEMON,
+            payload: {
+                pokemonid: id
             }
         })
     }

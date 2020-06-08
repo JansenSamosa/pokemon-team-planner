@@ -35,6 +35,7 @@ export class SearchFilterSortBar extends Component {
         return (
             <div className='search-filter-sort-bar'>
                 <input type='text' onChange={this.changeSearch.bind(this)} placeholder='Search for pokemon'/>
+                <p className='text'>Filter by:</p>
                 <div className='type-filter'>
                     <select onChange={this.setTypeFilter.bind(this)}>
                         <option value='all'>All Types</option>
@@ -62,10 +63,12 @@ export class SearchFilterSortBar extends Component {
                 <button onClick={this.toggleFinalEvoFilter} className={`toggle-finalevo-filter ${this.getToggleStyle(this.state.finalEvoFilter)}`}>
                     Final Evolutions Only
                 </button>
+                <p className='text'>Sort by:</p>
+
                 <div className='sort-method'>
                     <select onChange={this.setSort.bind(this)}>
                         <option value='pokedex-entry'>Pokedex Entry</option>
-                        <option value='stat-average'> Stat Average</option>
+                        <option value='stat-average'> Best Stats</option>
                         <option value='stat-hp'> Stat HP</option>
                         <option value='stat-attack'> Stat Attack</option>
                         <option value='stat-defense'> Stat Defense</option>
