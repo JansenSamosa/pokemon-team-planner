@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "588692072b0aae319b8311540cf6f020",
+    "revision": "78d47302b2b499a17751afbfe6f69d6c",
     "url": "/pokemon-team-planner/index.html"
   },
   {
