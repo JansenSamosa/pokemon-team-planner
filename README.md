@@ -1,4 +1,4 @@
-##Pokemon Team Planner
+<h1>Pokemon Team Planner</h1>
 
 An app used to plan out your own pokemon team. 
 
