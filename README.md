@@ -1,4 +1,4 @@
-##Pokemon Team Planner
+##Pokemon Team Planner##
 An app used to plan out your own pokemon team. 
 
 https://jansensamosa.github.io/pokemon-team-planner/
